@@ -1,4 +1,6 @@
 from pathlib import Path
+from functools import lru_cache
+from typing import Literal
 
 from pydantic_settings import BaseSettings, SettingsConfigDict 
 from pydantic import SecretStr, Field
@@ -23,4 +25,9 @@ class Settings(BaseSettings):
     menu_path: Path = Field(default=Path("data/menu.csv"), validation_alias="MENU_PATH")
     stop_list_path: Path = Field(default=Path("data/stop_list.json"), validation_alias="STOP_LIST_PATH")
     
+    mode: Literal["tools", "json", "json_schema", "md_json"] = "json"
     
+
+@lru_cache
+def get_settings() -> Settings:
+    return Settings()
