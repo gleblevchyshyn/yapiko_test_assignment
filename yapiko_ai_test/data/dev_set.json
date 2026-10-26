@@ -1,0 +1,642 @@
+[
+  {
+    "id": "dev_01",
+    "message": "Добрий день! Хочу сет Омасу і два морси малина-ожина, доставка на Сумську 25, кв 14",
+    "expected": {
+      "items": [
+        {
+          "sku": "S08",
+          "qty": 1,
+          "options": {},
+          "comment": null
+        },
+        {
+          "sku": "D05",
+          "qty": 2,
+          "options": {},
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [],
+      "delivery": {
+        "type": "delivery",
+        "address": "Сумська 25, кв 14",
+        "time": null
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 1307,
+      "needs_clarification": false
+    }
+  },
+  {
+    "id": "dev_02",
+    "message": "здравствуйте, пиццу 4 мяса с сырным бортом и колу",
+    "expected": {
+      "items": [
+        {
+          "sku": "P12",
+          "qty": 1,
+          "options": {
+            "Борт": "Сирний"
+          },
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [
+        "колу"
+      ],
+      "delivery": {
+        "type": null,
+        "address": null,
+        "time": null
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 388,
+      "needs_clarification": true
+    }
+  },
+  {
+    "id": "dev_03",
+    "message": "Самовивіз з Пушкінської о 18:30. Удон зі свининою 2 шт, рамен з куркою, соєвий соус 3",
+    "expected": {
+      "items": [
+        {
+          "sku": "W03",
+          "qty": 2,
+          "options": {},
+          "comment": null
+        },
+        {
+          "sku": "SP03",
+          "qty": 1,
+          "options": {},
+          "comment": null
+        },
+        {
+          "sku": "SA09",
+          "qty": 3,
+          "options": {},
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [],
+      "delivery": {
+        "type": "pickup",
+        "address": "Пушкінська",
+        "time": "18:30"
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 577,
+      "needs_clarification": false
+    }
+  },
+  {
+    "id": "dev_04",
+    "message": "две филадельфии и том ям, Науки 47 подъезд 2",
+    "expected": {
+      "items": [],
+      "ambiguous": [
+        {
+          "text": "филадельфии",
+          "qty": 2,
+          "candidates": [
+            "R06",
+            "R10"
+          ]
+        }
+      ],
+      "unavailable": [
+        "SP04"
+      ],
+      "not_found": [],
+      "delivery": {
+        "type": "delivery",
+        "address": "Науки 47, подъезд 2",
+        "time": null
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 0,
+      "needs_clarification": true
+    }
+  },
+  {
+    "id": "dev_05",
+    "message": "Сет Кайдзю на день рождения, нас будет 10 человек, палочки на всех. Клочковская 190, к 20:00. Оплата картой курьеру",
+    "expected": {
+      "items": [
+        {
+          "sku": "S10",
+          "qty": 1,
+          "options": {},
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [],
+      "delivery": {
+        "type": "delivery",
+        "address": "Клочковская 190",
+        "time": "20:00"
+      },
+      "payment": "card_courier",
+      "persons": 10,
+      "total_uah": 1999,
+      "needs_clarification": false
+    }
+  },
+  {
+    "id": "dev_06",
+    "message": "можна суші бургер з лососем без огірка і полунично мятний морс",
+    "expected": {
+      "items": [
+        {
+          "sku": "B08",
+          "qty": 1,
+          "options": {},
+          "comment": "без огірка"
+        },
+        {
+          "sku": "D06",
+          "qty": 1,
+          "options": {},
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [],
+      "delivery": {
+        "type": null,
+        "address": null,
+        "time": null
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 468,
+      "needs_clarification": true
+    }
+  },
+  {
+    "id": "dev_07",
+    "message": "Pizza with pepperoni and a burger with chicken, Heroiv Pratsi 12, ASAP",
+    "expected": {
+      "items": [
+        {
+          "sku": "P04",
+          "qty": 1,
+          "options": {
+            "Борт": "Без начинки"
+          },
+          "comment": null
+        },
+        {
+          "sku": "B02",
+          "qty": 1,
+          "options": {},
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [],
+      "delivery": {
+        "type": "delivery",
+        "address": "Heroiv Pratsi 12",
+        "time": null
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 618,
+      "needs_clarification": false
+    }
+  },
+  {
+    "id": "dev_08",
+    "message": "Хочу каліфорнію з крабом і місо суп з тофу. Самовивіз",
+    "expected": {
+      "items": [
+        {
+          "sku": "SP09",
+          "qty": 1,
+          "options": {},
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [
+        "каліфорнію з крабом"
+      ],
+      "delivery": {
+        "type": "pickup",
+        "address": null,
+        "time": null
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 159,
+      "needs_clarification": true
+    }
+  },
+  {
+    "id": "dev_09",
+    "message": "3 рамена с морепродуктами, 2 с курицей и один сырный с креветкой. Отакара Яроша 9, 3 этаж офис 305. К 13:00 на обед",
+    "expected": {
+      "items": [
+        {
+          "sku": "SP06",
+          "qty": 3,
+          "options": {},
+          "comment": null
+        },
+        {
+          "sku": "SP03",
+          "qty": 2,
+          "options": {},
+          "comment": null
+        },
+        {
+          "sku": "SP05",
+          "qty": 1,
+          "options": {},
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [],
+      "delivery": {
+        "type": "delivery",
+        "address": "Отакара Яроша 9, 3 этаж, офис 305",
+        "time": "13:00"
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 1390,
+      "needs_clarification": false
+    }
+  },
+  {
+    "id": "dev_10",
+    "message": "Добрий вечір, Мисливська піца з хот-дог бортом, ще одна наполі звичайна, 2 кетчупи. Гагаріна 20",
+    "expected": {
+      "items": [
+        {
+          "sku": "P07",
+          "qty": 1,
+          "options": {
+            "Борт": "Хот-дог"
+          },
+          "comment": null
+        },
+        {
+          "sku": "P02",
+          "qty": 1,
+          "options": {
+            "Борт": "Без начинки"
+          },
+          "comment": null
+        },
+        {
+          "sku": "SA03",
+          "qty": 2,
+          "options": {},
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [],
+      "delivery": {
+        "type": "delivery",
+        "address": "Гагаріна 20",
+        "time": null
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 785,
+      "needs_clarification": false
+    }
+  },
+  {
+    "id": "dev_11",
+    "message": "сок сандора и смаженый рис с лососем, Тракторостроителей 85 кв 40",
+    "expected": {
+      "items": [
+        {
+          "sku": "W11",
+          "qty": 1,
+          "options": {},
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [
+        "D07"
+      ],
+      "not_found": [],
+      "delivery": {
+        "type": "delivery",
+        "address": "Тракторостроителей 85, кв 40",
+        "time": null
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 259,
+      "needs_clarification": true
+    }
+  },
+  {
+    "id": "dev_12",
+    "message": "Сет тижня + рол темпура з креветкою і лососем. Оплата готівкою, решта з 2000",
+    "expected": {
+      "items": [
+        {
+          "sku": "S01",
+          "qty": 1,
+          "options": {},
+          "comment": null
+        },
+        {
+          "sku": "R12",
+          "qty": 1,
+          "options": {},
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [],
+      "delivery": {
+        "type": null,
+        "address": null,
+        "time": null
+      },
+      "payment": "cash",
+      "persons": null,
+      "total_uah": 978,
+      "needs_clarification": true
+    }
+  },
+  {
+    "id": "dev_13",
+    "message": "хочу что-то острое на двоих, адрес Победы 66",
+    "expected": {
+      "items": [],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [],
+      "delivery": {
+        "type": "delivery",
+        "address": "Победы 66",
+        "time": null
+      },
+      "payment": null,
+      "persons": 2,
+      "total_uah": 0,
+      "needs_clarification": true
+    }
+  },
+  {
+    "id": "dev_14",
+    "message": "Привіт! 2 фунчози з креветками, 1 удон з морепродуктами, 3 світ чилі соуси, вода 2 літри негазована. Академіка Павлова 160",
+    "expected": {
+      "items": [
+        {
+          "sku": "W07",
+          "qty": 2,
+          "options": {},
+          "comment": null
+        },
+        {
+          "sku": "W06",
+          "qty": 1,
+          "options": {},
+          "comment": null
+        },
+        {
+          "sku": "SA06",
+          "qty": 3,
+          "options": {},
+          "comment": null
+        },
+        {
+          "sku": "D08",
+          "qty": 2,
+          "options": {},
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [],
+      "delivery": {
+        "type": "delivery",
+        "address": "Академіка Павлова 160",
+        "time": null
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 832,
+      "needs_clarification": false
+    }
+  },
+  {
+    "id": "dev_15",
+    "message": "Удон з куркою в кокосовому, рис каррі і 2 узвари. Можна без кінзи в рис? Пр. Науки 14, на 21:30",
+    "expected": {
+      "items": [
+        {
+          "sku": "W08",
+          "qty": 1,
+          "options": {},
+          "comment": null
+        },
+        {
+          "sku": "W09",
+          "qty": 1,
+          "options": {},
+          "comment": "без кінзи"
+        },
+        {
+          "sku": "D02",
+          "qty": 2,
+          "options": {},
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [],
+      "delivery": {
+        "type": "delivery",
+        "address": "пр. Науки 14",
+        "time": "21:30"
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 646,
+      "needs_clarification": false
+    }
+  },
+  {
+    "id": "dev_16",
+    "message": "Можно заказать на 23:00? Пицца с креветками, Сумская 10",
+    "expected": {
+      "items": [
+        {
+          "sku": "P06",
+          "qty": 1,
+          "options": {
+            "Борт": "Без начинки"
+          },
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [],
+      "delivery": {
+        "type": "delivery",
+        "address": "Сумская 10",
+        "time": "23:00"
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 319,
+      "needs_clarification": true
+    }
+  },
+  {
+    "id": "dev_17",
+    "message": "Бургер подвійний з яловичиною та сиром x2, Kronenbourg безалкогольне 2 шт, сирний соус. Ювілейний проспект 52",
+    "expected": {
+      "items": [
+        {
+          "sku": "B03",
+          "qty": 2,
+          "options": {},
+          "comment": null
+        },
+        {
+          "sku": "D03",
+          "qty": 2,
+          "options": {},
+          "comment": null
+        },
+        {
+          "sku": "SA02",
+          "qty": 1,
+          "options": {},
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [],
+      "delivery": {
+        "type": "delivery",
+        "address": "Ювілейний проспект 52",
+        "time": null
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 1095,
+      "needs_clarification": false
+    }
+  },
+  {
+    "id": "dev_18",
+    "message": "Кидс бокс для ребенка и чизбургер, самовывоз с Героев Труда в 15:00",
+    "expected": {
+      "items": [
+        {
+          "sku": "B10",
+          "qty": 1,
+          "options": {},
+          "comment": null
+        },
+        {
+          "sku": "B01",
+          "qty": 1,
+          "options": {},
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [],
+      "delivery": {
+        "type": "pickup",
+        "address": "Героев Труда",
+        "time": "15:00"
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 718,
+      "needs_clarification": false
+    }
+  },
+  {
+    "id": "dev_19",
+    "message": "Ред булл 2 банки і рисові чіпси, Полтавський шлях 120",
+    "expected": {
+      "items": [
+        {
+          "sku": "D09",
+          "qty": 2,
+          "options": {},
+          "comment": null
+        },
+        {
+          "sku": "Z01",
+          "qty": 1,
+          "options": {},
+          "comment": null
+        }
+      ],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [],
+      "delivery": {
+        "type": "delivery",
+        "address": "Полтавський шлях 120",
+        "time": null
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 307,
+      "needs_clarification": false
+    }
+  },
+  {
+    "id": "dev_20",
+    "message": "Повторите мой прошлый заказ пожалуйста, адрес тот же",
+    "expected": {
+      "items": [],
+      "ambiguous": [],
+      "unavailable": [],
+      "not_found": [],
+      "delivery": {
+        "type": null,
+        "address": null,
+        "time": null
+      },
+      "payment": null,
+      "persons": null,
+      "total_uah": 0,
+      "needs_clarification": true
+    }
+  }
+]
