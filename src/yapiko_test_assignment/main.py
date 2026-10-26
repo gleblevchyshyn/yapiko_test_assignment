@@ -9,6 +9,12 @@ from .config import get_settings
 from .menu import StopListProvider, load_menu
 from .prompts import build_system_prompt
 
+import logging
+
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s"
+)
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):

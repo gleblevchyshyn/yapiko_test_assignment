@@ -35,6 +35,9 @@ async def parse(
     if usage is not None:
         response.headers["X-Prompt-Tokens"] = str(usage.prompt_tokens)
         response.headers["X-Completion-Tokens"] = str(usage.completion_tokens)
+        cost = getattr(usage, "cost", None)
+        if cost is not None:
+            response.headers["X-Cost-USD"] = str(cost)
 
     return result
 
