@@ -9,6 +9,7 @@ from .config import get_settings
 from .menu import StopListProvider, load_menu
 from .prompts import build_system_prompt
 
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     settings = get_settings()
@@ -18,10 +19,16 @@ async def lifespan(app: FastAPI):
     app.state.menu = menu
 
     app.state.system_prompt = build_system_prompt(menu)
-    openai_client = AsyncOpenAI(api_key=settings.api_key.get_secret_value(), base_url=settings.base_url, timeout=settings.timeout)
-    app.state.client = instructor.from_openai(openai_client, mode=instructor.Mode[settings.mode.upper()])
+    openai_client = AsyncOpenAI(
+        api_key=settings.api_key.get_secret_value(),
+        base_url=settings.base_url,
+        timeout=settings.timeout,
+    )
+    app.state.client = instructor.from_openai(
+        openai_client, mode=instructor.Mode[settings.mode.upper()]
+    )
 
-    yield    
+    yield
     await openai_client.close()
 
 

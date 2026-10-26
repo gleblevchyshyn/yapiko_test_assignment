@@ -12,7 +12,9 @@ router = APIRouter()
 
 
 @router.post("/parse")
-async def parse(body: ParseRequest, request: Request, response: Response) -> ParseResponse:
+async def parse(
+    body: ParseRequest, request: Request, response: Response
+) -> ParseResponse:
     state = request.app.state
 
     try:
