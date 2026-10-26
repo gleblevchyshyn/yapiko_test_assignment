@@ -41,8 +41,8 @@ class ParseResponse(BaseModel):
     persons: int | None = Field(default=None, ge=1)
     total_uah: int = Field(ge=0)
     needs_clarification: bool
-    
-    
+
+
 class MenuItem(BaseModel):
     sku: str
     category: str
@@ -51,12 +51,12 @@ class MenuItem(BaseModel):
     pieces: int | None = None
     price_uah: int
     options: dict[str, dict[str, int]] = {}
-    
+
     @field_validator("pieces", mode="before")
     @classmethod
     def empty_to_none(cls, value: str | None) -> str | None:
         return value or None
-    
+
     @field_validator("options", mode="before")
     @classmethod
     def parse_options(cls, value: str | dict | None) -> dict:
@@ -71,11 +71,13 @@ class MenuItem(BaseModel):
             choice_name, surcharge = raw_choice.strip().rsplit(" ", 1)
             choices[choice_name] = int(surcharge)
         return {option_name.strip(): choices}
-    
+
 
 class OptionChoice(BaseModel):
     name: str = Field(description="Option name exactly as in the menu, e.g. 'Борт'.")
-    choice: str = Field(description="Chosen value exactly as in the menu, e.g. 'Сирний'.")    
+    choice: str = Field(
+        description="Chosen value exactly as in the menu, e.g. 'Сирний'."
+    )
 
 
 class Mention(BaseModel):
